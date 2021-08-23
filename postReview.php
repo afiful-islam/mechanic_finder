@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,16 +39,8 @@
                           <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="login.html">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Login</button></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link button" href="signup.html">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Signup</button></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link button" href="mechanic-registration.html">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Create mechanic account</button></a>
+                            <a class="nav-link button" href="logout.php">
+                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                       </ul>
                     </div>
@@ -65,45 +58,66 @@
             </video>
     </section>
 
-    <section id="mechanic-registartion" class="to-scrol">
+    <section id="post_review" class="to-scrol">
         <div class="container">
             <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
-                <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Create Mechanic Account</h1>
+                <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Post a review</h1>
             </div>
-            <form method="post" name = "reviewform" onsubmit="return validateMechanicForm()" action="createMechanic.php">
+            <form method="post" name = "reviewform" onsubmit="return validateReviewForm()" action="save_review.php">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <label for="garagename">Name of Garage</label>
-                                <input type="text" id="garagename" class="form-control" name="garage_name"> 
+                                <label for="name">Name of Garage</label>
+                                <input type="text" id="garage_name" class="form-control" name="garage_name"> 
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="ownername">Name of Owner</label>
-                                <input type="text" id="ownername" class="form-control" name="owner_name"> 
-                            </div> 
+                                <label for="name">Experience</label>
+                               <textarea name="experience" class="form-control" id="experience" cols="30" rows="5"></textarea> 
+                            </div>
+                            <!-- <div class="col-md-12 form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" name="email"> 
+                            </div> -->
                             <div class="col-md-12 form-group">
-                                <label for="phone">Phone number</label>
-                                <input type="phone" id="phone" class="form-control" name="phone"> 
-                            </div> 
-                            <div class="col-md-12 form-group">
-                                <label for="hours">Operating hours</label>
-                                <input type="phone" id="hours" class="form-control" name="operating_hours"> 
-                            </div>                          
-                            <div class="col-md-12 form-group">
-                                <label for="address">Address</label>
-                                <input type="text" id="address" class="form-control" name="address"> 
-                            </div>                           
-                            <div class="col-md-12 form-group">
-                                <label for="service-available">Services Available</label>
-                                <input type="phone" id="service-available" class="form-control" name="speciality"> 
+                            <label for="rating">Rate</label><br>
+                            <select class="review" name="rating">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>                               
+                            </select>
+                                <!-- <ul clas="review">
+                                    <li><input type="radio" id="rating1" name="rate" value="1"> 
+                                <label for="rating1">1</label></li>
+                                    <li><input type="radio" id="rating2" name="rate" value="2"> 
+                                <label for="rating1">2</label></li>
+                                    <li><input type="radio" id="rating3" name="rate" value="3"> 
+                                <label for="rating1">3</label></li>
+                                    <li><input type="radio" id="rating4" name="rate" value="4"> 
+                                <label for="rating1">4</label></li>
+                                    <li><input type="radio" id="rating5" name="rate" value="5"> 
+                                <label for="rating1">5</label></li>
+                                    <li><input type="radio" id="rating6" name="rate" value="6"> 
+                                <label for="rating1">6</label></li>
+                                    <li><input type="radio" id="rating7" name="rate" value="7"> 
+                                <label for="rating1">7</label></li>
+                                    <li><input type="radio" id="rating8" name="rate" value="8"> 
+                                <label for="rating1">8</label></li>
+                                    <li><input type="radio" id="rating2" name="rate" value="9"> 
+                                <label for="rating1">9</label></li>
+                                    <li><input type="radio" id="rating10" name="rate" value="10"> 
+                                <label for="rating1">10</label></li>
+                                </ul> -->
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="service-home">Home Service</label>
-                                <input type="phone" id="service-home" class="form-control" name="homeServices"> 
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name = "submit" type="submit">SUBMIT</button>
+                                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name="submit" type="submit">SUBMIT</button>
                             </div>
                         </div>
                     </div>
@@ -148,6 +162,6 @@
 
             <!-- Latest compiled JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
-            <script src="OtherPages/assets/js/script.js"></script>
+            <script src="OtherPages/assets/js/script.js"></script> 
 </body>
 </html>

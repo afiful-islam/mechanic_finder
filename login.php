@@ -38,19 +38,10 @@
                         <li class="nav-item">
                           <a class="nav-link" href="#">Contact Us</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link button" href="login.html">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Login</button></a>
-                        </li> -->
                         <li class="nav-item">
-                            <!-- <a class="boxed-btn3" href="signup.php">Sign Up</a> -->
                             <a class="nav-link button" href="signup.php">
                             <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Signup</button></a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link button" href="mechanic-registration.html">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Create mechanic account</button></a>
-                        </li> -->
                       </ul>
                     </div>
                   </nav>

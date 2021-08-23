@@ -7,7 +7,7 @@
     <title>Car mechanic finder</title>
      <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="Group 12/assets/css/style.css">
+    <link rel="stylesheet" href="OtherPages/assets/css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- jQuery library -->
@@ -18,7 +18,7 @@
         <div class="container">
              <nav class="navbar navbar-light">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-light w-100">
-                    <a class="navbar-brand" href="#"> <img src="Group 12/assets/images/logo-100.png" alt=""></a>
+                    <a class="navbar-brand" href="#"> <img src="OtherPages/assets/images/logo-100.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -38,15 +38,11 @@
                           <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="#">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Login</button></a>
+                            <a class="nav-link button" href="logout.php">
+                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="#">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Signup</button></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link button" href="#">
+                            <a class="nav-link button" href="mechanicRegistration.php">
                             <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Create mechanic account</button></a>
                         </li>
                       </ul>
@@ -61,7 +57,7 @@
      -->
     <section id="hero">
         <video width="100%" autoplay muted loop id="myVideo">
-            <source src="Group 12/rain.mp4" type="video/mp4">
+            <source src="OtherPages/rain.mp4" type="video/mp4">
             </video>
     </section>
     
@@ -71,17 +67,25 @@
      -->
 
 
-    <section id="search" class="">
-        <div class="container">
-            <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
-                <h1 class="text-center font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg">Search Area-wise or Specialty-wise </h1>
-            </div>
-            <form class="form-inline my-2 my-lg-0 w-50 m-auto">
-                <input class="form-control w-100 mb-3" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100" type="submit">Search</button>
-            </form>
-        </div>
-    </section>
+     <div class="container">
+			<br />
+			<br />
+			<br />
+			<h1 align="center">Search</h1><br />
+			<div class="form-group">
+				<div class="input-group">
+					<input type="text" name="search_text" id="search_text" placeholder="Search area-wise or speciality-wise" class="form-control" />
+				</div>
+			</div>
+			<br />
+			<div id="result"></div>
+		</div>
+		<div style="clear:both"></div>
+		<br />
+		
+		<br />
+		<br />
+		<br />
 
 
     <!-- reviews section
@@ -111,7 +115,7 @@
 					?>
 
                     <li>
-                      <img src="Group 12/assets/images/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+                      <img src="OtherPages/assets/images/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
                       <p class="fs-110 font-cond-l" contenteditable="false">" <?php echo $ex;?> "</p>
                       <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Martha Stewart</h5>
                       <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">- <?php echo $au;?></small>
@@ -121,19 +125,6 @@
                      $i++;
                     }
                     ?>
-
-                    <!-- <li>
-                      <img src="Group 12/assets/images/avatar4.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-                      <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-                      <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Ariana Menage</h5>
-                      <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Recording Artist - Los Angeles</small>
-                    </li>
-                    <li>
-                      <img src="Group 12/assets/images/avatar5.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-                      <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-                      <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Sean Carter</h5>
-                      <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Fund Manager - Chicago</small>
-                    </li> -->
                   </ul>
             </div>
         </div>
@@ -145,7 +136,7 @@
      
     <?php
     include_once 'database.php';
-    $result1 = mysqli_query($conn,"SELECT shopName, rating FROM review ORDER BY rating DESC LIMIT 3");
+    $result1 = mysqli_query($conn,"SELECT shopName, ROUND(AVG(rating),1) from review GROUP BY shopName ORDER BY ROUND(AVG(rating),1) DESC LIMIT 3");
     ?>
     
      <section id="top-mechanic" class="bg-light">
@@ -160,30 +151,16 @@
 					$i=0;
 					while($row = mysqli_fetch_array($result1)) {
 						$shn = $row["shopName"];
-                        $rt = $row["rating"];
+                        $rt = $row["ROUND(AVG(rating),1)"];
 					?>
 
                     <div class="row top-mechanic-profile pb-5">
-                        <div class="col-md-3"><img src="Group 12/assets/images/avatar1.png" alt="" class="w-100"></div>
+                        <div class="col-md-3"><img src="OtherPages/assets/images/avatar1.png" alt="" class="w-100"></div>
                         <div class="col-md-9">
                             <h3><?php echo $shn;?></h3>
                             <p>Rating: <?php echo $rt;?>/10</p>
                         </div>
                     </div>
-                    <!-- <div class="row top-mechanic-profile pb-5">
-                        <div class="col-md-3"><img src="Group 12/assets/images/avatar4.png" alt="" class="w-100"></div>
-                        <div class="col-md-9">
-                            <h3>Ariana Menage</h3>
-                            <p>" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-                        </div>
-                    </div>
-                    <div class="row top-mechanic-profile pb-5">
-                        <div class="col-md-3"><img src="Group 12/assets/images/avatar5.png" alt="" class="w-100"></div>
-                        <div class="col-md-9">
-                            <h3>Ariana Menage</h3>
-                            <p>" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-                        </div>
-                    </div> -->
 
                     <?php
                      $i++;
@@ -248,6 +225,36 @@
 
             <!-- Latest compiled JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-            <script src="Group 12/assets/js/script.js"></script> 
+            <!-- <script src="OtherPages/assets/js/script.js"></script>  -->
+            
+            <script>
+            $(document).ready(function(){
+                load_data();
+                function load_data(query)
+                {
+                    $.ajax({
+                        url:"search_fetch.php",
+                        method:"post",
+                        data:{query:query},
+                        success:function(data)
+                        {
+                            $('#result').html(data);
+                        }
+                    });
+                }
+                
+                $('#search_text').keyup(function(){
+                    var search = $(this).val();
+                    if(search != '')
+                    {
+                        load_data(search);
+                    }
+                    else
+                    {
+                        load_data();			
+                    }
+                });
+            });
+            </script>
 </body>
 </html>

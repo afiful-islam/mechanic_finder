@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +38,8 @@
                           <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="login.php">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Login</button></a>
+                            <a class="nav-link button" href="logout.php">
+                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                       </ul>
                     </div>
@@ -58,34 +57,45 @@
             </video>
     </section>
 
-    <section id="registartion" class="to-scrol">
+    <section id="mechanic-registartion" class="to-scrol">
         <div class="container">
             <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
-                <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Sign up</h1>
+                <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Create Mechanic Account</h1>
             </div>
-            <form method="post" name="regform" onsubmit="return validateSignForm()" action="create_acc.php">
+            <form method="post" name = "reviewform" onsubmit="return validateMechanicForm()" action="create_mechanic.php">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <label for="name">Name</label>
-                                <input name="uname" type="text" id="name" class="form-control" name="name"> 
+                                <label for="garagename">Name of Garage</label>
+                                <input type="text" id="garagename" class="form-control" name="garage_name"> 
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="email">Email</label>
-                                <input name="uemail" type="email" id="email" class="form-control" name="email"> 
+                                <label for="ownername">Name of Owner</label>
+                                <input type="text" id="ownername" class="form-control" name="owner_name"> 
+                            </div> 
+                            <div class="col-md-12 form-group">
+                                <label for="phone">Phone number</label>
+                                <input type="text" id="phone" class="form-control" name="phone"> 
+                            </div> 
+                            <div class="col-md-12 form-group">
+                                <label for="hours">Operating hours</label>
+                                <input type="text" id="hours" class="form-control" name="operating_hours"> 
+                            </div>                          
+                            <div class="col-md-12 form-group">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" class="form-control" name="address"> 
+                            </div>                           
+                            <div class="col-md-12 form-group">
+                                <label for="service-available">Services Available</label>
+                                <input type="text" id="service-available" class="form-control" name="speciality"> 
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="password">Password</label>
-                                <input name="pass" type="password" id="password" class="form-control" name="password"> 
+                                <label for="service-home">Home Service</label>
+                                <input type="text" id="service-home" class="form-control" name="homeServices"> 
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="confirm-password">Confirm Password</label>
-                                <input name="re_pass" type="password" id="confirm-password" class="form-control" name="confirm-password"> 
-                            </div>
-                            
-                            <div class="col-md-12 form-group">
-                                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name="submit" type="submit">SIGN UP</button>
+                                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name = "submit" type="submit">SUBMIT</button>
                             </div>
                         </div>
                     </div>
