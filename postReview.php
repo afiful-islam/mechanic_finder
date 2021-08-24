@@ -19,24 +19,24 @@
         <div class="container">
              <nav class="navbar navbar-light">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-light w-100">
-                    <a class="navbar-brand" href="index.html"> <img src="OtherPages/assets/images/logo-100.png" alt=""></a>
+                    <a class="navbar-brand" href="home.php"> <img src="OtherPages/assets/images/logo-100.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
                   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">Browse Reviews</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Privacy & Policy</a>
+                          <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Contact Us</a>
+                          <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link button" href="logout.php">
@@ -75,10 +75,6 @@
                                 <label for="name">Experience</label>
                                <textarea name="experience" class="form-control" id="experience" cols="30" rows="5"></textarea> 
                             </div>
-                            <!-- <div class="col-md-12 form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" name="email"> 
-                            </div> -->
                             <div class="col-md-12 form-group">
                             <label for="rating">Rate</label><br>
                             <select class="review" name="rating">
@@ -93,28 +89,6 @@
                                 <option>9</option>
                                 <option>10</option>                               
                             </select>
-                                <!-- <ul clas="review">
-                                    <li><input type="radio" id="rating1" name="rate" value="1"> 
-                                <label for="rating1">1</label></li>
-                                    <li><input type="radio" id="rating2" name="rate" value="2"> 
-                                <label for="rating1">2</label></li>
-                                    <li><input type="radio" id="rating3" name="rate" value="3"> 
-                                <label for="rating1">3</label></li>
-                                    <li><input type="radio" id="rating4" name="rate" value="4"> 
-                                <label for="rating1">4</label></li>
-                                    <li><input type="radio" id="rating5" name="rate" value="5"> 
-                                <label for="rating1">5</label></li>
-                                    <li><input type="radio" id="rating6" name="rate" value="6"> 
-                                <label for="rating1">6</label></li>
-                                    <li><input type="radio" id="rating7" name="rate" value="7"> 
-                                <label for="rating1">7</label></li>
-                                    <li><input type="radio" id="rating8" name="rate" value="8"> 
-                                <label for="rating1">8</label></li>
-                                    <li><input type="radio" id="rating2" name="rate" value="9"> 
-                                <label for="rating1">9</label></li>
-                                    <li><input type="radio" id="rating10" name="rate" value="10"> 
-                                <label for="rating1">10</label></li>
-                                </ul> -->
                             </div>
                             <div class="col-md-12 form-group">
                                 <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name="submit" type="submit">SUBMIT</button>
@@ -153,7 +127,7 @@
             </div>
         </div>
         <div class="text-center p-3">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="#">CAR MECHANIC FINDER</a></p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="home.php">CAR MECHANIC FINDER</a></p>
         </div>
         <!-- Copyright -->
       </footer>

@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
         // Display status message
         echo $statusMsg;
 }
-header("Location: index.php");
+header("Location: home.php");
 
 	
 

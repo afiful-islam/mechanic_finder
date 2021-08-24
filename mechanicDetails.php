@@ -1,3 +1,9 @@
+<?php 
+
+$garage_name = $_GET['id'];
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,40 +68,97 @@
             </video>
     </section>
 
-    <section id="registartion" class="to-scrol">
-        <div class="container">
-            <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
-                <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Contact Us</h1>
-            </div>
-            <form method="post" name="regform" onsubmit="return validateContactForm()" action="contact_us.php">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <label for="name">Name</label>
-                                <input name="uname" type="text" id="name" class="form-control" name="name"> 
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <label for="email">Email</label>
-                                <input name="uemail" type="email" id="email" class="form-control" name="email"> 
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <label for="phone">Phone</label>
-                                <input name="uphone" type="text" id="text" class="form-control" name="text"> 
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <label for="confirm-password">Message</label>
-                                <textarea cols="30" rows="10" name="umessage" type="text" id="message" class="form-control" name="message"> </textarea>
-                            </div>
-                            
-                            <div class="col-md-12 form-group">
-                                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name="submit" type="submit">SEND</button>
-                            </div>
-                        </div>
+    <section>
+        
+        <h1 class="align-center">Mechanic Details</h1><br><br>
+
+
+        
+            
+                <div class="container bg-dark p-4">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-12 align-items-center bg-white p-2 p-top-10">
+
+                                    <?php
+
+                                    $conn = new mysqli("localhost", "root", "", "mechanic_finder");
+
+                                    $query = "SELECT * FROM `mechanics` where garageName = '$garage_name'";
+                                    
+                                    $result = $conn->query($query);
+
+                                    if ($result->num_rows > 0) {
+                                        
+                                        while ($row = $result->fetch_assoc()) {
+                                            $ownerName = $row["ownerName"];
+                                            $garageName = $row["garageName"];        
+                                            $email = $row["email"];
+                                            $phone = $row["phone"];        
+                                            $address = $row["address"];
+                                            $operatingHours = $row["operatingHours"];
+                                            $speciality = $row["speciality"];
+                                            $home_services = $row["home_services"];
+
+                                    
+                                    echo "<div class='descript_wrap white-bg'>
+                                                    
+                                                    <div>
+                                                        <h3 class='fa fa-warehouse'> Garage Name:</h3>
+                                                        <h5>{$garageName}</h5><br>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <h3 class='fa fa-user'> Owner Name:</h3>
+                                                        <h5>{$ownerName}</h5><br>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <h3 class='fa fa-envelope'> E-mail:</h3>
+                                                        <h5>{$email}</h5><br>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <h3 class='fa fa-phone'> Contact Number:</h3>
+                                                        <h5>{$phone}</h5><br>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <h3 class='fa fa-map-marker'> Address:</h3>
+                                                        <h5>{$address}</h5><br>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <h3 class='fa fa-clock'> Operating Hours:</h3>
+                                                        <h5>{$operatingHours}</h5><br>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <h3 class='fa fa-tools'> Our specialities are:</h3>
+                                                        <h5>{$speciality}</h5><br>
+                                                        
+                                                    </div>
+                                                    <div>
+                                                        <h3 class='fa fa-home'> We have home service for this services:</h3>
+                                                        <h5>{$home_services}</h5><br>
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                            ";
+                                            }
+                                        }
+                                                
+
+
+                                    ?>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+       
+        
+
+
+
     </section>
 
     <footer class="text-center text-lg-start">

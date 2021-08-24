@@ -18,7 +18,7 @@
         <div class="container">
              <nav class="navbar navbar-light">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-light w-100">
-                    <a class="navbar-brand" href="index.html"> <img src="OtherPages/assets/images/logo-100.png" alt=""></a>
+                    <a class="navbar-brand" href="home.php"> <img src="OtherPages/assets/images/logo-100.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -26,16 +26,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">Browse Reviews</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Privacy & Policy</a>
+                          <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Contact Us</a>
+                          <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link button" href="logout.html">
@@ -137,7 +137,7 @@ $result2 = mysqli_query($conn,"SELECT * FROM mechanics");
                 ?>
 
                             <div class="jobs_conetent">
-                                <h5><?php echo $row["ownerName"]?> - owner of <?php echo $row["garageName"];?></h5>
+                                <h5 ><?php echo $row["ownerName"]?> - owner of <?php echo $row["garageName"];?></h5>
                                     <div class="d-flex align-items-center">
                                     <div class="mt-2 col-md-4">
                                             <p><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></p>
@@ -149,7 +149,7 @@ $result2 = mysqli_query($conn,"SELECT * FROM mechanics");
                                             <p> <i class="fa fa-phone" aria-hidden="true"></i> <?php echo $row["phone"]; ?></p>
                                         </div>
                                         <div class="mt-2 col-md-6">
-                                            <p> <i class="fa fa-warehouse" aria-hidden="true"></i> <?php echo $row["address"]; ?></p>
+                                            <p> <i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["address"]; ?></p>
                                         </div>
                                         <div class="mt-2 col-md-4">
                                         <form action="delete_mechanic.php?id=<?php echo $row["email"]; ?>" method="post">
@@ -301,7 +301,7 @@ $result4 = mysqli_query($conn,"SELECT * FROM feedback");
             </div>
         </div>
         <div class="text-center p-3">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="#">CAR MECHANIC FINDER</a></p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="home.php">CAR MECHANIC FINDER</a></p>
         </div>
         <!-- Copyright -->
       </footer>

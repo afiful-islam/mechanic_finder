@@ -10,7 +10,7 @@ if(isset($_POST['store_feedback']))
 
 	 $sql = "INSERT INTO feedback (message,name) VALUES ('$message','$name')";
 	 if (mysqli_query($conn, $sql)) {
-		header("Location: index.php");
+		header("Location: home.php");
 	} 
     else {
 		echo "Error: " . $sql . "" . mysqli_error($conn);

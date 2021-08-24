@@ -37,7 +37,8 @@ else{
 				<td>'.$row["garageName"].'</td>
 				<td>'.$row["address"].'</td>
 				<td>'.$row["speciality"].'</td>
-				<td><a class="boxed-btn3" href="job_details.php?id='.$row["id"].'">Learn more</a></td>
+				<td><form action="mechanicDetails.php?id='.$row["garageName"].'" method="post">
+				<input  class="btn btn-success" type="submit" value="Learn more"></form></td>
 			</tr>
 		';
 	}

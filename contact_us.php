@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
                     if ($insert) {
                         $status = 'success';
                         $statusMsg = "user created successfully.";
-                        header("location: index.php");
+                        header("location: home.php");
                     } else {
                         $statusMsg = "user creation failed, please try again.";
                         header("location: contact.php");

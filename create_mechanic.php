@@ -35,10 +35,10 @@ if (isset($_POST['submit'])) {
                     if ($insert) {
                         $status = 'success';
                         $statusMsg = "mechanic created successfully.";
-                        header("location: index.php");
+                        header("location: home.php");
                     } else {
                         $statusMsg = "mechanic creation failed, please try again.";
-                        header("location: mechanic-registration.php");
+                        header("location: mechanicRegistration.php");
                     }
                 } 
             

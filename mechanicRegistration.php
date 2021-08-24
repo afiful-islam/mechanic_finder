@@ -18,24 +18,24 @@
         <div class="container">
              <nav class="navbar navbar-light">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-light w-100">
-                    <a class="navbar-brand" href="index.html"> <img src="OtherPages/assets/images/logo-100.png" alt=""></a>
+                    <a class="navbar-brand" href="home.php"> <img src="OtherPages/assets/images/logo-100.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
                   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">Browse Reviews</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Privacy & Policy</a>
+                          <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Contact Us</a>
+                          <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link button" href="logout.php">
@@ -131,7 +131,7 @@
             </div>
         </div>
         <div class="text-center p-3">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="#">CAR MECHANIC FINDER</a></p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="home.php">CAR MECHANIC FINDER</a></p>
         </div>
         <!-- Copyright -->
       </footer>
