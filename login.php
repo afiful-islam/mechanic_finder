@@ -1,4 +1,19 @@
 
+<?php 
+include('login_validation.php');
+
+if (isset($_SESSION['email'])) {
+    if($_SESSION['utype']=="admin"){
+		header("location: admin.php");
+	}
+	else{
+		header("location: home.php");
+	}
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,21 +41,9 @@
                   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
-                      <li class="nav-item active">
-                          <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Browse Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="contact.php">Contact Us</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link button" href="signup.php">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Signup</button></a>
+                            <button class="btn btn-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Signup</button></a>
                         </li>
                       </ul>
                     </div>
@@ -62,7 +65,7 @@
             <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
                 <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Log In</h1>
             </div>
-            <form action="reg">
+            <form action="" method="post">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <div class="row">
@@ -79,7 +82,7 @@
                                 <input type="password" id="password" class="form-control" name="password"> 
                             </div>
                             <div class="col-md-12 form-group">
-                                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">LOG IN</button>
+                                <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name="signin" type="submit">LOG IN</button>
                             </div>
                         </div>
                     </div>

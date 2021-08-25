@@ -1,3 +1,15 @@
+<?php 
+
+session_start();
+if (isset($_SESSION['email'])) {
+   $email=$_SESSION['email'];
+}elseif (isset($_SESSION['user_email_address'])) {
+    $email=$_SESSION['user_email_address'];
+}else{
+   header("location: login.php");
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,12 +51,16 @@
                           <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="logout.php">
-                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link button" href="mechanicRegistration.php">
                             <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Create mechanic account</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link button" href="postReview.php">
+                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Post a review</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link button" href="logout.php">
+                            <button class="btn btn-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                       </ul>
                     </div>

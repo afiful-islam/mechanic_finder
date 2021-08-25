@@ -26,21 +26,9 @@
                   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ml-auto">
-                      <li class="nav-item active">
-                          <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Browse Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="contact.php">Contact Us</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link button" href="login.php">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Login</button></a>
+                            <button class="btn btn-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Login</button></a>
                         </li>
                       </ul>
                     </div>

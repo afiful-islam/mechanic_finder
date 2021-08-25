@@ -1,3 +1,22 @@
+<?php
+
+session_start();
+$email = $_SESSION["email"];
+$admin = $_SESSION["utype"];
+
+
+if ($admin=="admin") {
+   
+	
+}
+else{
+		header("location: logout.php");
+	}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,8 +57,8 @@
                           <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="logout.html">
-                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
+                            <a class="nav-link button" href="logout.php">
+                            <button class="btn btn-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                         </ul>
                     </div>

@@ -2,6 +2,14 @@
 
 $garage_name = $_GET['id'];
 
+session_start();
+if (isset($_SESSION['email'])) {
+   $email=$_SESSION['email'];
+}elseif (isset($_SESSION['user_email_address'])) {
+    $email=$_SESSION['user_email_address'];
+}else{
+   header("location: login.php");
+}
 
 ?>
 
@@ -45,12 +53,16 @@ $garage_name = $_GET['id'];
                           <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="logout.php">
-                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link button" href="mechanicRegistration.php">
                             <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Create mechanic account</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link button" href="postReview.php">
+                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Post a review</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link button" href="logout.php">
+                            <button class="btn btn-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                       </ul>
                     </div>
@@ -133,12 +145,12 @@ $garage_name = $_GET['id'];
                                                         
                                                     </div>
                                                     <div>
-                                                        <h3 class='fa fa-tools'> Our specialities are:</h3>
+                                                        <h3 class='fa fa-tools'> Our specialities:</h3>
                                                         <h5>{$speciality}</h5><br>
                                                         
                                                     </div>
                                                     <div>
-                                                        <h3 class='fa fa-home'> We have home service for this services:</h3>
+                                                        <h3 class='fa fa-home'> We have home service for these service(s):</h3>
                                                         <h5>{$home_services}</h5><br>
                                                         
                                                     </div>

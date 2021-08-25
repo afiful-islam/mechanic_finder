@@ -1,10 +1,10 @@
 <?php
-// session_start();
-// if (isset($_SESSION['email'])) {
-//    $author=$_SESSION['email'];
-// }elseif(isset($_SESSION['user_email_address'])) {
-//     $author=$_SESSION['user_email_address'];
-// }
+session_start();
+if (isset($_SESSION['email'])) {
+   $author=$_SESSION['email'];
+}elseif(isset($_SESSION['user_email_address'])) {
+    $author=$_SESSION['user_email_address'];
+}
 $statusMsg = "";
 if (isset($_POST['submit'])) {
 	

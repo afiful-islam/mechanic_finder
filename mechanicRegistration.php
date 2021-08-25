@@ -1,3 +1,16 @@
+<?php 
+
+session_start();
+if (isset($_SESSION['email'])) {
+   $email=$_SESSION['email'];
+}elseif (isset($_SESSION['user_email_address'])) {
+    $email=$_SESSION['user_email_address'];
+}else{
+   header("location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,8 +51,12 @@
                           <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link button" href="postReview.php">
+                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Post a review</button></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link button" href="logout.php">
-                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
+                            <button class="btn btn-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                       </ul>
                     </div>
@@ -68,31 +85,31 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <label for="garagename">Name of Garage</label>
-                                <input type="text" id="garagename" class="form-control" name="garage_name"> 
+                                <input type="text" id="garagename" class="form-control" name="garage_name" placeholder="Garage's name"> 
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="ownername">Name of Owner</label>
-                                <input type="text" id="ownername" class="form-control" name="owner_name"> 
+                                <input type="text" id="ownername" class="form-control" name="owner_name" placeholder="Owner's name"> 
                             </div> 
                             <div class="col-md-12 form-group">
                                 <label for="phone">Phone number</label>
-                                <input type="text" id="phone" class="form-control" name="phone"> 
+                                <input type="text" id="phone" class="form-control" name="phone" placeholder="01xxxxxxxxx"> 
                             </div> 
                             <div class="col-md-12 form-group">
                                 <label for="hours">Operating hours</label>
-                                <input type="text" id="hours" class="form-control" name="operating_hours"> 
+                                <input type="text" id="hours" class="form-control" name="operating_hours" placeholder="X AM to Y PM"> 
                             </div>                          
                             <div class="col-md-12 form-group">
                                 <label for="address">Address</label>
-                                <input type="text" id="address" class="form-control" name="address"> 
+                                <input type="text" id="address" class="form-control" name="address" placeholder="Location of your garage"> 
                             </div>                           
                             <div class="col-md-12 form-group">
                                 <label for="service-available">Services Available</label>
-                                <input type="text" id="service-available" class="form-control" name="speciality"> 
+                                <input type="text" id="service-available" class="form-control" name="speciality" placeholder="Painting, dent repair, oil change, etc..."> 
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="service-home">Home Service</label>
-                                <input type="text" id="service-home" class="form-control" name="homeServices"> 
+                                <input type="text" id="service-home" class="form-control" name="homeServices" placeholder="Oil change, etc..."> 
                             </div>
                             <div class="col-md-12 form-group">
                                 <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" name = "submit" type="submit">SUBMIT</button>

@@ -1,3 +1,16 @@
+<?php 
+
+session_start();
+if (isset($_SESSION['email'])) {
+   $email=$_SESSION['email'];
+}elseif (isset($_SESSION['user_email_address'])) {
+    $email=$_SESSION['user_email_address'];
+}else{
+   header("location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,12 +51,16 @@
                           <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button" href="logout.php">
-                            <button class="btn btn-outline-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link button" href="mechanicRegistration.php">
                             <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Create mechanic account</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link button" href="postReview.php">
+                            <button class="btn btn-outline-success my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Post a review</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link button" href="logout.php">
+                            <button class="btn btn-danger my-2 my-sm-0 text-center m-auto w-100 ml-2" type="submit">Log out</button></a>
                         </li>
                       </ul>
                     </div>
@@ -71,7 +88,7 @@
 			<br />
 			<br />
 			<br />
-			<h1 align="center">Search</h1><br />
+			<h1 align="center"><b>Search</b></h1><br />
 			<div class="form-group">
 				<div class="input-group">
 					<input type="text" name="search_text" id="search_text" placeholder="Search area-wise or speciality-wise" class="form-control" />
