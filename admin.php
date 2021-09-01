@@ -26,10 +26,25 @@ else{
     <title>Car mechanic finder</title>
      <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="OtherPages/assets/css/style.css">
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- jQuery library -->
+
+    <link rel="stylesheet" href="OtherPages/assets/css/style.css">
+    <style>
+        .btn_delete {
+            text-align: right!important;
+        }
+
+        @media all and (max-width: 768px) {
+            .btn_delete {
+            text-align: left!important;
+        }
+        }
+    
+}
+    </style>
    
 </head>
 <body>
@@ -94,38 +109,39 @@ else{
                 <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">All Users</h1>
             </div>
             <div class="row  d-flex flex-row">
-                <div class="col-md-8"> 
 
                     <?php
 					$i=0;
 					while($row = mysqli_fetch_array($result1)) {
 					?>
-
-                                <div class="jobs_conetent">
+                                <div class="col-md-12 mb-3 jobs_conetent">
+                                <div class="row">
+                                    <div class="col-md-12 mb-2">
                                     <h4><?php echo $row["name"];?></h4>
-                                        <div class="d-flex align-items-center">
-                                        <div class="mt-2 col-md-4">
-                                                <p><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-4"><p><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></p></div>
+                                                    <div class="col-md-4"><p> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["email"]; ?></p></div>
+
+                                                    <div class="col-md-4"><p> <i class="fa fa-key" aria-hidden="true"></i> <?php echo $row["password"]; ?></p></div>
+                                                </div>
                                             </div>
-                                        <div class="mt-2 col-md-7">
-                                                <p> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["email"]; ?></p>
-                                            </div>
-                                            <div class="mt-2 col-md-7">
-                                                <p> <i class="fa fa-key" aria-hidden="true"></i> <?php echo $row["password"]; ?></p>
-                                            </div>
-                                            <div class="mt-2 col-md-4">
-                                            <form action="delete_user.php? id=<?php echo $row["email"]; ?>" method="post">
-                                                <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
-                                            </form>
+                                            <div class="col-md-2 btn_delete">
+                                                <form action="delete_user.php? id=<?php echo $row["email"]; ?>" method="post">
+                                                    <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
+                                                </form>
                                             </div>
                                         </div>
+                                    </div> 
                                 </div>
+                            </div>
                     <?php
                      $i++;
                     }
                     ?>
-
-                </div>
             </div>                       
         </div>
     </section>
@@ -148,41 +164,38 @@ $result2 = mysqli_query($conn,"SELECT * FROM mechanics");
             <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">All Mechanics</h1>
         </div>
         <div class="row  d-flex flex-row">
-            <div class="col-md-8"> 
-
                 <?php
                 $i=0;
                 while($row = mysqli_fetch_array($result2)) {
                 ?>
-
-                            <div class="jobs_conetent">
-                                <h5 ><?php echo $row["ownerName"]?> - owner of <?php echo $row["garageName"];?></h5>
-                                    <div class="d-flex align-items-center">
-                                    <div class="mt-2 col-md-4">
-                                            <p><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></p>
-                                        </div>
-                                    <div class="mt-2 col-md-4">
-                                            <p> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["email"]; ?></p>
-                                        </div>
-                                        <div class="mt-2 col-md-4">
-                                            <p> <i class="fa fa-phone" aria-hidden="true"></i> <?php echo $row["phone"]; ?></p>
-                                        </div>
-                                        <div class="mt-2 col-md-6">
-                                            <p> <i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["address"]; ?></p>
-                                        </div>
-                                        <div class="mt-2 col-md-4">
-                                        <form action="delete_mechanic.php?id=<?php echo $row["email"]; ?>" method="post">
-                                            <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
-                                        </form>
-                                        </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-md-12 mb-2">
+                                        <h5><?php echo $row["ownerName"]?> - owner of <?php echo $row["garageName"];?></h5>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-3"><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></div>
+                                                    <div class="col-md-3"><p> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["email"]; ?></p></div>
+                                                    <div class="col-md-3"><p> <i class="fa fa-phone" aria-hidden="true"></i> <?php echo $row["phone"]; ?></p></div>
+                                                    <div class="col-md-3"><p><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["address"]; ?></p></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 btn_delete">
+                                                <form action="delete_mechanic.php?id=<?php echo $row["email"]; ?>" method="post">
+                                                    <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
                             </div>
                 <?php
                  $i++;
                 }
                 ?>
-
-            </div>
         </div>                       
     </div>
 </section>
@@ -204,38 +217,41 @@ $result3 = mysqli_query($conn,"SELECT * FROM review");
             <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">All Reviews</h1>
         </div>
         <div class="row  d-flex flex-row">
-            <div class="col-md-8"> 
 
                 <?php
                 $i=0;
                 while($row = mysqli_fetch_array($result3)) {
                 ?>
-
-                            <div class="jobs_conetent">
-                                <h5> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["author"];?></h5>
-                                    <div class="d-flex align-items-center">
-                                    <div class="mt-2 col-md-4">
-                                            <p><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></p>
-                                        </div>
-                                    <div class="mt-2 col-md-6">
-                                            <p> <i class="fa fa-warehouse" aria-hidden="true"></i> <?php echo $row["shopName"]; ?></p>
-                                        </div>
-                                        <div class="mt-2 col-md-8">
-                                            <p> <i class="fa fa-comment" aria-hidden="true"></i> <?php echo $row["experience"]; ?></p>
-                                        </div>
-                                        <div class="mt-2 col-md-4">
-                                        <form action="delete_review.php?id=<?php echo $row["id"]; ?>" method="post">
-                                            <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
-                                        </form>
-                                        </div>
+                            <div class="col-md-12 mb-3 jobs_conetent">
+                                <div class="row">
+                                    <div class="col-md-12 mb-2">
+                                    <h5> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["author"];?></h5>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-4"> <p><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></p></div>
+
+                                                    <div class="col-md-4"><p><i class="fa fa-warehouse" aria-hidden="true"></i> <?php echo $row["shopName"]; ?></p></div>
+
+                                                    <div class="col-md-4"><p> <i class="fa fa-comment" aria-hidden="true"></i> <?php echo $row["experience"]; ?></p></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 btn_delete">
+                                                <form action="delete_review.php?id=<?php echo $row["id"]; ?>" method="post">
+                                                    <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
                             </div>
                 <?php
                  $i++;
                 }
                 ?>
-
-            </div>
         </div>                       
     </div>
 </section>
@@ -257,35 +273,37 @@ $result4 = mysqli_query($conn,"SELECT * FROM feedback");
             <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">All Feedbacks</h1>
         </div>
         <div class="row  d-flex flex-row">
-            <div class="col-md-8"> 
 
                 <?php
                 $i=0;
                 while($row = mysqli_fetch_array($result4)) {
                 ?>
 
-                            <div class="jobs_conetent">
-                                
-                                    <div class="d-flex align-items-center">
-                                        <div class="mt-2 col-md-6">
-                                            <p> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $row["name"];?></p>
+                    <div class="col-md-12 mb-3 jobs_conetent">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="row">
+                                            <div class="col-md-4"> <p> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $row["name"];?></p></div>
+
+                                            <div class="col-md-4"><p> <i class="fa fa-comment-alt" aria-hidden="true"></i> <?php echo $row["message"]; ?></p></div>
+
                                         </div>
-                                        <div class="mt-2 col-md-12">
-                                            <p> <i class="fa fa-comment-alt" aria-hidden="true"></i> <?php echo $row["message"]; ?></p>
-                                        </div>
-                                        <div class="mt-2 col-md-4">
+                                    </div>
+                                    <div class="col-md-2 btn_delete">
                                         <form action="deleteuser.php?id=<?php echo $row["email"]; ?>" method="post">
                                             <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
                                         </form>
-                                        </div>
                                     </div>
-                            </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
                 <?php
                  $i++;
                 }
                 ?>
-
-            </div>
         </div>                       
     </div>
 </section>
