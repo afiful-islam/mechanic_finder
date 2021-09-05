@@ -42,9 +42,6 @@ if (isset($_SESSION['email'])) {
                           <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Browse Reviews</a>
-                        </li>
-                        <li class="nav-item">
                           <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
                         </li>
                         <li class="nav-item">
@@ -91,7 +88,7 @@ if (isset($_SESSION['email'])) {
 			<h1 align="center"><b>Search</b></h1><br />
 			<div class="form-group">
 				<div class="input-group">
-					<input type="text" name="search_text" id="search_text" placeholder="Search area-wise or speciality-wise" class="form-control" />
+					<input type="text" name="search_text" id="search_text" placeholder="Search by garage name, area-wise or speciality-wise" class="form-control" />
 				</div>
 			</div>
 			<br />
@@ -112,7 +109,7 @@ if (isset($_SESSION['email'])) {
 
     <?php
     include_once 'database.php';
-    $result = mysqli_query($conn,"SELECT experience, author FROM review ORDER BY RAND() LIMIT 3");
+    $result = mysqli_query($conn,"SELECT shopName, experience, author FROM review ORDER BY RAND() LIMIT 3");
     ?>
 
     <section id="reviews" class="bg-light">
@@ -127,14 +124,17 @@ if (isset($_SESSION['email'])) {
                     <?php
 					$i=0;
 					while($row = mysqli_fetch_array($result)) {
-						$ex = $row["experience"];
+						$shn = $row["shopName"];
+                        $ex = $row["experience"];
                         $au = $row["author"];
 					?>
 
                     <li>
                       <img src="OtherPages/assets/images/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
                       <p class="fs-110 font-cond-l" contenteditable="false">" <?php echo $ex;?> "</p>
-                      <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">- <?php echo $au;?></small>
+                      <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">- <?php echo $au;?> <br> on <br> <?php echo $shn;?></small>
+
+                      
                     </li>
 
                     <?php

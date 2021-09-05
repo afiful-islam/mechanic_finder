@@ -6,7 +6,8 @@ if(isset($_POST["query"]))
 	$search = mysqli_real_escape_string($connect, $_POST["query"]);
 	$query = "
 	SELECT * FROM mechanics 
-	WHERE address LIKE '%".$search."%'
+	WHERE garageName LIKE '%".$search."%'
+	OR address LIKE '%".$search."%'
 	OR speciality LIKE '%".$search."%'
 	";
 }

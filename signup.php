@@ -64,7 +64,7 @@
                                 <input name="uemail" type="email" id="email" class="form-control" name="email"> 
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="password">Password</label>
+                                <label for="password">Password (Must contain uppercase, lowercase and a special character)</label>
                                 <input name="pass" type="password" id="password" class="form-control" name="password"> 
                             </div>
                             <div class="col-md-12 form-group">

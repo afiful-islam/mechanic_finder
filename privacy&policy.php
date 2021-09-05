@@ -42,9 +42,6 @@ if (isset($_SESSION['email'])) {
                           <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Browse Reviews</a>
-                        </li>
-                        <li class="nav-item">
                           <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
                         </li>
                         <li class="nav-item">

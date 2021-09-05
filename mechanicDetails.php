@@ -44,9 +44,6 @@ if (isset($_SESSION['email'])) {
                           <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Browse Reviews</a>
-                        </li>
-                        <li class="nav-item">
                           <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
                         </li>
                         <li class="nav-item">
@@ -166,8 +163,61 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
             </div>
+
+            <?php
+
+include_once 'database.php';
+$result1 = mysqli_query($conn,"SELECT * FROM review where shopName = '$garage_name'");
+
+?>
        
-        
+    <section>
+               
+    <h1 class="align-center font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Available Reviews On Them</h1>
+             
+            <div class="container bg-dark p-4">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-12 align-items-center bg-white p-2 p-top-10">
+                    
+                    <div class="container">
+        <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
+            
+        </div>
+        <div class="row  d-flex flex-row">
+
+                <?php
+                $i=0;
+                while($row = mysqli_fetch_array($result1)) {
+                ?>
+                            <div class="col-md-12 mb-3 jobs_conetent">
+                                <div class="row">
+                                    <div class="col-md-12 mb-2">
+                                    <h5> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["author"];?></h5>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-4"> <p><i class="fa fa-star" aria-hidden="true"></i> <?php echo $row["rating"]; ?> out of 10 </p></div>
+
+                                                    <div class="col-md-8"><p> <i class="fa fa-comment" aria-hidden="true"></i> <?php echo $row["experience"]; ?></p></div>
+
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                <?php
+                 $i++;
+                }
+                ?>
+        </div>                       
+    </div>
+                    </div>
+                </div>
+            </div>
 
 
 

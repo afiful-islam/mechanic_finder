@@ -63,9 +63,6 @@ else{
                           <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Browse Reviews</a>
-                        </li>
-                        <li class="nav-item">
                           <a class="nav-link" href="privacy&policy.php">Privacy & Policy</a>
                         </li>
                         <li class="nav-item">
@@ -231,7 +228,7 @@ $result3 = mysqli_query($conn,"SELECT * FROM review");
                                         <div class="row">
                                             <div class="col-md-10">
                                                 <div class="row">
-                                                    <div class="col-md-4"> <p><i class="fa fa-id-card" aria-hidden="true"></i> <?php echo $row["id"]; ?></p></div>
+                                                    <div class="col-md-4"> <p><i class="fa fa-star" aria-hidden="true"></i> <?php echo $row["rating"]; ?></p></div>
 
                                                     <div class="col-md-4"><p><i class="fa fa-warehouse" aria-hidden="true"></i> <?php echo $row["shopName"]; ?></p></div>
 
@@ -309,6 +306,60 @@ $result4 = mysqli_query($conn,"SELECT * FROM feedback");
 </section>
 
 
+    <!-- contact section
+    ==================================================================
+     -->
+
+     <?php
+
+include_once 'database.php';
+$result5 = mysqli_query($conn,"SELECT * FROM contact");
+
+?>
+<section id="contact" class="bg-light">
+    <div class="container">
+        <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
+            <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">All Contact Messages</h1>
+        </div>
+        <div class="row  d-flex flex-row">
+
+        <?php
+                $i=0;
+                while($row = mysqli_fetch_array($result5)) {
+                ?>
+                            <div class="col-md-12 mb-3 jobs_conetent">
+                                <div class="row">
+                                    <div class="col-md-12 mb-2">
+                                    <h5> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["email"];?></h5>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-4"> <p><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $row["phone"]; ?></p></div>
+
+                                                    <div class="col-md-4"><p><i class="fa fa-user" aria-hidden="true"></i> <?php echo $row["name"]; ?></p></div>
+
+                                                    <div class="col-md-4"><p> <i class="fa fa-comment" aria-hidden="true"></i> <?php echo $row["message"]; ?></p></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 btn_delete">
+                                                <form action="delete_message.php?id=<?php echo $row["id"]; ?>" method="post">
+                                                    <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                <?php
+                 $i++;
+                }
+                ?>
+        </div>                       
+    </div>
+</section>
 
 
     <footer class="text-center text-lg-start">
