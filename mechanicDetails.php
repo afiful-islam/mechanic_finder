@@ -173,7 +173,7 @@ $result1 = mysqli_query($conn,"SELECT * FROM review where shopName = '$garage_na
        
     <section>
                
-    <h1 class="align-center font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Available Reviews On Them</h1>
+    <h1 class="align-center font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Available Reviews</h1>
              
             <div class="container bg-dark p-4">
                 <div class="d-flex justify-content-center">
