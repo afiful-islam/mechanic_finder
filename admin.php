@@ -289,7 +289,7 @@ $result4 = mysqli_query($conn,"SELECT * FROM feedback");
                                         </div>
                                     </div>
                                     <div class="col-md-2 btn_delete">
-                                        <form action="deleteuser.php?id=<?php echo $row["email"]; ?>" method="post">
+                                        <form action="delete_feedback.php?id=<?php echo $row["id"]; ?>" method="post">
                                             <input  class='btn btn-danger' type="submit" name="submit" value="Delete"> 
                                         </form>
                                     </div>
